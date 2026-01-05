@@ -171,7 +171,7 @@ Check if feature gate DataflowAffinity is enabled in the featureGates.
 {{- end -}}
 
 {{- define "common.nodeSelectors" -}}
-{{- $selector := default .Values.global.nodeSelector .Values.nodeSelector }}
+{{- $selector := default .Values.nodeSelector .Values.global.nodeSelector }}
 {{- if $selector }}
       nodeSelector:
 {{ toYaml $selector | indent 8 }}
